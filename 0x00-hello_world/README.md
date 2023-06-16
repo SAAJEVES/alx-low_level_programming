@@ -5,3 +5,5 @@
 4) 3-name compiles a C file and create an executable named "cisfun"
 5) 4-puts.c prints exactly "Programming is like building a multiligual puzzle"
 6) 5-printf.c prints exactly "with proper grammar, but the outcome is a piece of art, "
+7) 6-size.c prints the size of various types on the computer
+8) 7-
