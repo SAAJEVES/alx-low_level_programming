@@ -7,4 +7,4 @@
 6) 5-printf.c prints exactly "with proper grammar, but the outcome is a piece of art, "
 7) 6-size.c prints the size of various types on the computer
 8) 100-intel generates the assembly code of a C code and save it in an output
-9) 101-
+9) 101-prints exactly ```and that piece of art is useful" - Dora Korpar, 2015-10-19```
