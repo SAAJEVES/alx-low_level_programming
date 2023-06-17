@@ -3,14 +3,13 @@
 #include <time.h>
 
 /**
- * Main - entry point
+ * main - entry point
  *
- * Description : carries out a check on the last digit of generated
- *	number
+ * Description : Checks the last digit of a randomly generated number.
+ *		Prints information based on the value of the last digit.
  *
  * Return: always 0 (Success)
  */
-
 int main(void)
 {
 	int n;
@@ -18,23 +17,18 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
-	int lstNum = n % 10;
-
-	if (n < 6 && n > 0)
+	if ((n % 10) > 5)
 	{
-		printf("last digit of %d is %d and is less than 6 and not 0\n", n, lstNum);
+		printf("Last digit of %d is %d and is greater than 5\n", n, n % 10)
 	}
-	else if (n > 5)
+	else if ((n % 10) < 6 && (n % 10) != 1)
 	{
-		printf("last digit of %d is %d and is  greater than 5\n", n, lstNum);
-	}
-	else if (n == 0)
-	{
-		printf("last digit of %d is %d and is 0\n", n, lstNum);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, n % 10);
 	}
 	else
 	{
-		printf("last digit of %d is %d and is less than 0\n", n, lstNum);
+		printf("Last digit of %d is %d and is 0\n", n, n % 10);
+	}
 
 
 	return (0);
