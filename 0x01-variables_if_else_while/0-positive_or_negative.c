@@ -3,12 +3,15 @@
 #include <stdlib.h>
 
 /**
- * main - prints if the integer is positivr or negative or zero
+ * main - Entry point of the program
  *
- * Return - Always success
+ * Description: This function prints whether a randomly generated integer is
+ *              positive, negative, or zero.
+ *
+ * Return: Always 0 (success)
  */
 
-int main(void)
+int  main(void)
 {
 	int n;
 
