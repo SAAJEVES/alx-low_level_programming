@@ -14,7 +14,7 @@ int main(void)
 
 	while (lower > 97 + 26)
 	{
-		putchars(lower);
+		putchar(lower);
 		lower++;
 	}
 	return (0);
