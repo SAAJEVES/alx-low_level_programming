@@ -11,6 +11,7 @@
 int main(void)
 {
 	char lower;
+
 	lower = 'a';
 
 	while (lower <= 'z')
