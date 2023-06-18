@@ -10,12 +10,13 @@
  */
 int main(void)
 {
-	int lower = 97;
+	int lower = 'a';
 
-	while (lower > 97 + 26)
+	while (lower <= 'z')
 	{
 		putchar(lower);
 		lower++;
 	}
+	putchar('/n');
 	return (0);
 }
