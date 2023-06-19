@@ -20,7 +20,7 @@ int main(void)
 		if (num == '9')
 		{
 			putchar(num);
-			ssize_t saaj = write(1, &dollar, sizeof(char));
+			ssize_t bytes_written = write(1, &dollar, sizeof(char));
 			num++;
 		}
 		putchar(num);
