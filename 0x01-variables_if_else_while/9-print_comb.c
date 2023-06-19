@@ -11,7 +11,6 @@
 int main(void)
 {
 	int num;
-	char dollar = '$';
 
 	num = '0';
 
@@ -20,7 +19,7 @@ int main(void)
 		if (num == '9')
 		{
 			putchar(num);
-			write(1, &dollar, 1);
+			write(1, '$', 1);
 			num++;
 		}
 		putchar(num);
