@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <unistd.h>
 
 /**
  * main - entry point
@@ -10,6 +11,7 @@
 int main(void)
 {
 	int num;
+	char dollar = '$';
 
 	num = '0';
 
@@ -18,8 +20,8 @@ int main(void)
 		if (num == '9')
 		{
 			putchar(num);
+			ssize_t saaj = write(1, &dollar, sizeof(char));
 			num++;
-			continue;
 		}
 		putchar(num);
 		putchar(',');
