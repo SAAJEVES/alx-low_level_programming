@@ -19,6 +19,7 @@ int main(void)
 		{
 			putchar(num);
 			num++;
+			continue;
 		}
 		putchar(num);
 		putchar(',');
