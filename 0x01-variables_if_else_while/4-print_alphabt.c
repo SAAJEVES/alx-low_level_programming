@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main: entry point of program
+ * main - Entry point of program
  *
  * Description: This function prints all the lowercase alphabet except e and q
  *
@@ -20,6 +20,7 @@ int main(void)
 			continue;
 		}
 		putchar(letter);
+		letter++;
 	}
 	putchar('\n');
 	return (0);
