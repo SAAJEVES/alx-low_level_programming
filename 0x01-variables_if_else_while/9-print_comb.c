@@ -19,7 +19,6 @@ int main(void)
 		if (num == '9')
 		{
 			putchar(num);
-			write(1, "$", 1);
 			num++;
 		}
 		putchar(num);
@@ -27,5 +26,6 @@ int main(void)
 		putchar(' ');
 		num++;
 	}
+	write(1, "$", 1);
 	return (0);
 }
