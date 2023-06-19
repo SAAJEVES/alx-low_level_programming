@@ -27,6 +27,6 @@ int main(void)
 		putchar(' ');
 		num++;
 	}
-	write(1, "$", 1);
+
 	return (0);
 }
