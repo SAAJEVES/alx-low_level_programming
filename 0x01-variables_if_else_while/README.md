@@ -8,4 +8,5 @@
 7) 6-print_numberz.c just like 5-print_numbers but using ascii values
 8) 7-print_tebahpla.c print the lowercase alphabet in reverse
 9) 8-print_base16.c prints all the numbers of base 16 in lowercase
-10)9-
+10)9-print_combo.c prints all possibel combinations of single-digit numbers
+11)
