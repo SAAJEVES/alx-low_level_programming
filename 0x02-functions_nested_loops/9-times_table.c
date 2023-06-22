@@ -17,11 +17,17 @@ void times_table(void)
 		while (times < 10)
 		{
 			int value = times * table;
+
 			if (value < 10)
 			{
 				_putchar(' ');
 				_putchar(' ');
 				_putchar((value % 10) + 48);
+				if (times == 9)
+				{
+					timess++;
+					continue;
+				}
 				_putchar(',');
 				times++;
 				continue;
