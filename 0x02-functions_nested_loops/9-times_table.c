@@ -29,7 +29,15 @@ void times_table(void)
 			_putchar(' ');
 			_putchar((value / 10) + 48);
 			_putchar((value % 10) + 48);
-			_putchar(',');
+			if(times < 9)
+			{
+				_putchar(',');
+			}
+			else
+			{
+				times++;
+				continue;
+			}
 			times++;
 		}
 		table++;
