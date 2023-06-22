@@ -16,7 +16,13 @@ void times_table(void)
 		times = 0;
 		while (times < 10)
 		{
-			int value;
+			int value = times * table;
+			if (value == 0)
+			{
+				putchar(' ');
+				putchar(' ');
+				putchar(48)
+			}
 		}
 	}	
 }
