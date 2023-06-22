@@ -12,7 +12,14 @@ int print_last_digit(int a)
 {
 	int lDigit;
 
-	lDigit = a % 10;
-	printf("%d", lDigit);
+	if(a < 0)
+	{
+		lDigit = -1 * (a % 10);
+	}
+	else
+	{
+		lDigit = a % 10;
+	}
+	_putchar(lDigit + '0');
 	return (lDigit);
 }
