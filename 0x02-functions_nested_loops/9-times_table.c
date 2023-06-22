@@ -17,21 +17,12 @@ void times_table(void)
 		while (times < 10)
 		{
 			int value = times * table;
-			if (value == 0)
+			if (value < 10)
 			{
 				_putchar(' ');
 				_putchar(' ');
-				_putchar(48);
-				_putchar(',');
-				times++;
-				continue;
-			}
-			if (value > 0 && times == 9)
-			{
-				_putchar(' ');
-				_putchar((value / 10) + 48);
 				_putchar((value % 10) + 48);
-				_putchar('$');
+				_putchar(',');
 				times++;
 				continue;
 			}
@@ -40,8 +31,8 @@ void times_table(void)
 			_putchar((value % 10) + 48);
 			_putchar(',');
 			times++;
-			continue;
 		}
 		table++;
+		_putchar('\n');
 	}	
 }
