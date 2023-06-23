@@ -10,7 +10,6 @@ int main(void)
 
 	i = 0;
 	positve_or_negative(i);
-	printf("%d is zero", i);
 
 	return (0);
 }
