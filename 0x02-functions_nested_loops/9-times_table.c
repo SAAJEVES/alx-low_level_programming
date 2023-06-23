@@ -18,35 +18,25 @@ void times_table(void)
 		{
 			int value = times * table;
 
-			if (value < 10)
+			if (times == 0)
 			{
-				_putchar(' ');
-				_putchar(' ');
-				_putchar((value % 10) + 48);
-				if (times == 9)
-				{
-					timess++;
-					continue;
-				}
-				_putchar(',');
-				times++;
-				continue;
+				_putchar(time + '0');				
 			}
-			_putchar(' ');
-			_putchar((value / 10) + 48);
-			_putchar((value % 10) + 48);
-			if(times < 9)
+			if (value < 10 && times != 0)
 			{
 				_putchar(',');
+				_putchar(' ');
+				_putchar(' ');
+				_putchar(value + '0');
 			}
-			else
+			else if (value >= 10)
 			{
-				times++;
-				continue;
+				_putchar(',');
+				_putchar(' ');
+				_putchar((value / 10) + '0');
+				_putchar((value % 10) + '0');
 			}
-			times++;
 		}
-		table++;
 		_putchar('\n');
 	}	
 }
