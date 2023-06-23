@@ -20,7 +20,7 @@ void times_table(void)
 
 			if (times == 0)
 			{
-				_putchar(times + '0');				
+				_putchar(times + '0');
 			}
 			if (value < 10 && times != 0)
 			{
@@ -36,7 +36,9 @@ void times_table(void)
 				_putchar((value / 10) + '0');
 				_putchar((value % 10) + '0');
 			}
+			times++;
 		}
+		table++;
 		_putchar('\n');
-	}	
+	}
 }
