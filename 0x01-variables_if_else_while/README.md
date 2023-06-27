@@ -9,4 +9,5 @@
 8) 7-print_tebahpla.c print the lowercase alphabet in reverse
 9) 8-print_base16.c prints all the numbers of base 16 in lowercase
 10)9-print_combo.c prints all possibel combinations of single-digit numbers
-11)
+11)100-print_combo3.c prints all possible combination of two digits from 1 to 99
+12)
