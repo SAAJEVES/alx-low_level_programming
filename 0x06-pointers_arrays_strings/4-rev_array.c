@@ -15,7 +15,7 @@ void reverse_array(int *a, int n)
 {
 	int i;
 	int j;
-	int* arrCpy;
+	int *arrCpy;
 
 	arrCpy = malloc(n * sizeof(int));
 	if (arrCpy == NULL)
