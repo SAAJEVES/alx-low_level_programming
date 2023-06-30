@@ -15,21 +15,14 @@
  */
 char *_strncpy(char *dest, char *src, int n)
 {
-	size_t destSize;
-	int destSizeToInt;
+	int i;
 
-	destSize = sizeof(dest);
-	destSizeToInt = (int)destSize - 1;
+	i = 0;
 
-	if (n < destSizeToInt)
+	while (i < n && src[i] != '\0')
 	{
-		strncpy(dest, src, n);
+		dest[i] = src[i];
 	}
-	else
-	{
-		strncpy(dest, src, destSizeToInt);
-	}
-	dest[destSizeToInt] = '\0';
-
+	dest[n] = '\0';
 	return (dest);
 }
