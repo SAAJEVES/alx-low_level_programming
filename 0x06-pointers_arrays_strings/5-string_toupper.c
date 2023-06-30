@@ -11,22 +11,15 @@
 char *string_toupper(char *a)
 {
 	int i;
-	int stringLen;
 
-	size_t lent = sizeof(a);
+	i = 0;
 
-	stringLen = (int)lent;
-	for (i = 0; i < stringLen; i++)
+	while (a[i] != '\0')
 	{
 		if (a[i] >= 97 && a[i] <= 122)
 		{
 			a[i] = a[i] - 32;
 		}
-		else
-		{
-			a[i] = a[i];
-		}
 	}
-	a[stringLen + 1] = '\0';
 	return (a);
 }
