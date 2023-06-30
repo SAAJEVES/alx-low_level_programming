@@ -27,5 +27,6 @@ char *string_toupper(char *a)
 			a[i] = a[i];
 		}
 	}
+	a[stringLen] = '\0';
 	return (a);
 }
