@@ -11,33 +11,21 @@ char *leet(char *a)
 {
 	int i;
 
+	char alpha[] = "oOlLeEaAtT";
+	char value[] = "0011334477";
+
 	i = 0;
 
 	while (a[i] != '\0')
 	{
-		if (a[i] == 'a' || a[i] == 'A')
+		int j;
+
+		for (j = 0; j < 10; j++)
 		{
-			a[i] = 4;
-		}
-		else if (a[i] == 'e' || a[i] == 'E')
-		{
-			a[i] = 3;
-		}
-		else if (a[i] == 'o' || a[i] == 'O')
-		{
-			a[i] = 0;
-		}
-		else if (a[i] == 't' || a[i] == 'T')
-		{
-			a[i] = 7;
-		}
-		else if (a[i] == 'l' || a[i] == 'L')
-		{
-			a[i] = 1;
-		}
-		else
-		{
-			a[i] = a[i];
+			if (a[i] == alpha[j])
+			{
+				a[i] = value[j];
+			}
 		}
 		i++;
 	}
