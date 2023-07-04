@@ -27,11 +27,13 @@ unsigned int _strspn(char *s, char *accept)
 				times++;
 				break;
 			}
+			j++;
 		}
 		if (*(s + i) != *(accept + j))
 		{
 			break;
 		}
+		i++;
 	}
-	return (times + 1);
+	return (times);
 }
