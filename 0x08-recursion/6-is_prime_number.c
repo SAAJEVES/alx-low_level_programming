@@ -44,7 +44,7 @@ int is_prime(int n, int val)
 
 	if (n % val == 0)
 	{
-		return (0 + is_prime(n, val + 1));
+		return (1 + is_prime(n, val + 1));
 	}
-	return (1 + is_prime(n, val + 1));
+	return (0 + is_prime(n, val + 1));
 }
