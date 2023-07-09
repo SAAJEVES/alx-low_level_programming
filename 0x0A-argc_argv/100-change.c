@@ -1,6 +1,59 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+/**
+ * changeCoin - gets the number of coins
+ *
+ * coin: amount
+ *
+ * Return: the number of times
+ */
+int changeCoin(int coin)
+{
+	int num = 0;
+
+	while (coin != 0)
+	{
+		if (coin < 0)
+		{
+			coin = 0;
+			continue;
+		}
+		if (coin >= 25)
+		{
+			num = num + (coin / 25);
+			coin = coin % 25;
+			continue;
+		}
+		if (coin >= 10)
+		{
+			num = num + (coin / 10);
+			coin = coin % 10;
+			continue;
+		}
+		if (coin >= 5)
+		{
+			num = num + (coin / 5);
+			coin = coin % 5;
+			continue;
+		}
+		if (coin >= 2)
+		{
+			num = num + (coin / 2);
+			coin = coin % 2;
+			continue;
+		}
+		if (coin >= 1)
+		{
+			num = num + (coin / 1);
+			coin = coin % 1;
+			continue;
+		}
+	}
+	return (num);
+}
+
 /**
  * main - prints the minimum number of coint to make change for an amount
  *
@@ -12,53 +65,18 @@
  */
 int main(int argc, char *argv[])
 {
-	int value, n;
+	int value;
+	int amount;
 
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	n = 0;
 	value = atoi(argv[1]);
-	while (value != 0)
-	{
-		if (value < 0)
-		{
-			value = 0;
-			continue;
-		}
-		if (value >= 25)
-		{
-			n = n + (value / 25);
-			value = value % 25;
-			continue;
-		}
-		if (value >= 10)
-		{
-			n = n + (value / 10);
-			value = value % 10;
-			continue;
-		}
-		if (value >= 5)
-		{
-			n = n + (value / 5);
-			value = value % 5;
-			continue;
-		}
-		if (value >= 2)
-		{
-			n = n + (value / 2);
-			value = value % 2;
-			continue;
-		}
-		if (value >= 1)
-		{
-			n = n + (value / 1);
-			value = value % 1;
-			continue;
-		}
-	}
-	printf("%d\n", n);
+
+	amount = changeCoin(value);
+
+	printf("%d\n", amount);
 	return (0);
 }
