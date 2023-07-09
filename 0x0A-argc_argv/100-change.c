@@ -23,6 +23,11 @@ int main(int argc, char *argv[])
 	value = atoi(argv[1]);
 	while (value != 0)
 	{
+		if (value < 0)
+		{
+			value = 0;
+			continue;
+		}
 		if (value >= 25)
 		{
 			n = n + (value / 25);
