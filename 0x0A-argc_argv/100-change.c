@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
 {
 	int value, n;
 
-	if ((argc - 1) != 1)
+	if (argc != 2)
 	{
-		printf("Error");
+		printf("Error\n");
 		return (1);
 	}
 	n = 0;
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
 		if (value >= 5)
 		{
 			n = n + (value / 5);
-			value = value % 10;
+			value = value % 5;
 			continue;
 		}
 		if (value >= 2)
