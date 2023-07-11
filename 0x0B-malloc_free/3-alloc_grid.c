@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 /**
- * alloc-grid - creates a two dimensional arrays of integers
+ * alloc_grid - creates a two dimensional arrays of integers
  *
  * @width: width of array
  *
