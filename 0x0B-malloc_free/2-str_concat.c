@@ -17,10 +17,15 @@ char *str_concat(char *s1, char *s2)
 	size_t len1;
 	size_t len2;
 	int i, j, totalLen;
+	char s[] = "";
 
-	if (s1 == NULL || s2 == NULL)
+	if (s1 == NULL)
 	{
-		return ("");
+		s1 = s;
+	}
+	if (s2 == NULL)
+	{
+		s2 = s;
 	}
 
 	len1 = strlen(s1);
