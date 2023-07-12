@@ -22,11 +22,11 @@ char *argstostr(int ac, char **av)
 	{
 		return (NULL);
 	}
-	for (i = 1; i < ac; i++)
+	for (i = 0; i < ac; i++)
 	{
 		len += (int)sizeof(av[i]);
 	}
-	len += ac - 1;
+	len += ac - 1 + 1;
 	str = (char *)malloc(len * sizeof(char));
 	if (str == NULL)
 	{
