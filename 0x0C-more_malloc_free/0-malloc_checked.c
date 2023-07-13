@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 /**
  * malloc_checked - allocate memory using malloc
@@ -11,6 +12,11 @@
 void *malloc_checked(unsigned int b)
 {
 	int *ptr;
+
+	if (b >= INT_MAX)
+	{
+		return ((void *)98);
+	}
 
 	ptr = malloc(b);
 
