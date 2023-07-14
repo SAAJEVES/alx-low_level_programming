@@ -19,6 +19,10 @@ int *array_range(int min, int max)
 	}
 	minVal = min;
 	arrPtr = malloc((max - min + 1) * sizeof(int));
+	if (arrPtr == NULL)
+	{
+		return (NULL);
+	}
 	i = 0;
 	while (minVal <= max)
 	{
