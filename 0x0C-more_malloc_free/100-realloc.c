@@ -49,5 +49,6 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 			((int *)arrPtr)[i] = ((int *)ptr)[i];
 		}
 	}
+	free(ptr);
 	return (arrPtr);
 }
