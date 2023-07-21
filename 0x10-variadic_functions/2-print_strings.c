@@ -21,7 +21,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	for (i = 0; i < n; i++)
 	{
 		word = va_arg(words, char *);
-		if (word == NULL)
+		if (!word)
 		{
 			printf("(nil)");
 		}
