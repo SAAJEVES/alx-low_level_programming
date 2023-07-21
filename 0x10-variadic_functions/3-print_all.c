@@ -9,6 +9,7 @@
 void printChar(va_list form)
 {
 	int c = va_arg(form, int);
+
 	printf("%c", c);
 }
 
@@ -20,6 +21,7 @@ void printChar(va_list form)
 void printInt(va_list form)
 {
 	int num = va_arg(form, int);
+
 	printf("%d", num);
 }
 
@@ -31,6 +33,7 @@ void printInt(va_list form)
 void printFloat(va_list form)
 {
 	float num = va_arg(form, double);
+
 	printf("%f", num);
 }
 
@@ -42,6 +45,7 @@ void printFloat(va_list form)
 void printString(va_list form)
 {
 	char *value = va_arg(form, char *);
+
 	if (!value)
 	{
 		printf("(nil)");
