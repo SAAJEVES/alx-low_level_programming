@@ -1,7 +1,13 @@
 #include <stdio.h>
 
-void saySomething() __attribute__((constructor));
-void saySomething()
+void saySomething(void) __attribute__((constructor));
+/**
+ * saySomething - print a required statement
+ *
+ * Return: void
+ */
+void saySomething(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow, \nI bore my house upon \
+			my back!\n");
 }
