@@ -1,100 +1,104 @@
-#include <stdio.h>
 #include "variadic_functions.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
- * printChar - print char
- * @form: form
- * Return: void
+ * print_char - Prints a character.
+ * @args: The va_list containing the character to print.
+ * @separator: The string to be printed between the characters.
  */
-void printChar(va_list form)
+void print_char(va_list args, char *separator)
 {
-	int c = va_arg(form, int);
+	char ch = va_arg(args, int);
 
-	printf("%c", c);
+	printf("%s%c", separator, ch);
 }
 
 /**
- * printInt - print inf
- * @form: form
- * Return: void
+ * print_int - Prints an integer.
+ * @args: The va_list containing the integer to print.
+ * @separator: The string to be printed between the integers.
  */
-void printInt(va_list form)
+void print_int(va_list args, char *separator)
 {
-	int num = va_arg(form, int);
+	int num = va_arg(args, int);
 
-	printf("%d", num);
+	printf("%s%d", separator, num);
 }
 
 /**
- * printFloat - print float
- * @form: form
- * Return: void
+ * print_float - Prints a float.
+ * @args: The va_list containing the float to print.
+ * @separator: The string to be printed between the floats.
  */
-void printFloat(va_list form)
+void print_float(va_list args, char *separator)
 {
-	float num = va_arg(form, double);
+	float f = va_arg(args, double);
 
-	printf("%f", num);
+	printf("%s%f", separator, f);
 }
 
 /**
- * printString - print string literals
- * @form: form
- * Return: void
+ * print_string - Prints a string.
+ * @args: The va_list containing the string to print.
+ * @separator: The string to be printed between the strings.
  */
-void printString(va_list form)
+void print_string(va_list args, char *separator)
 {
-	char *value = va_arg(form, char *);
+	char *str = va_arg(args, char *);
 
-	if (!value)
-	{
-		printf("(nil)");
-	}
-	else
-	{
-		printf("%s", value);
-	}
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s%s", separator, str);
 }
 
 /**
- * print_all - print all
- * @format: format specifier
+ * print_all - Prints anything.
+ * @format: The format string indicating the types of arguments.
  *
- * Return: void
+ * Description: The format string can contain the following specifiers:
+ *    - 'c' to print a char
+ *    - 'i' to print an integer
+ *    - 'f' to print a float
+ *    - 's' to print a char *
+ *    - Any other char should be ignored
+ *    - If the string is NULL, "(nil)" will be printed instead
+ *
+ * Return: void.
  */
 void print_all(const char * const format, ...)
 {
-	va_list form;
-	type_print value[] = {
-		{"c", printChar},
-		{"s", printString},
-		{"f", printFloat},
-		{"i", printInt},
-		{NULL, NULL},
-	};
-	int i, j;
-	char *separator;
+	va_list args;
+	unsigned int i = 0;
+	char *separator = "";
 
-	separator = "";
-	i = 0;
-	j = 0;
+	va_start(args, format);
 
-	va_start(form, format);
-	while (format[i] && format)
+	while (format && format[i])
 	{
-		while (value[j].s)
+		switch (format[i])
 		{
-			if (*value[j].s == format[i])
-			{
-				printf("%s", separator);
-				value[j].func(form);
-				separator = ", ";
-			}
-			++j;
+		case 'c':
+			print_char(args, separator);
+			break;
+		case 'i':
+			print_int(args, separator);
+			break;
+		case 'f':
+			print_float(args, separator);
+			break;
+		case 's':
+			print_string(args, separator);
+			break;
+		default:
+			i++;
+			continue;
 		}
-		j = 0;
-		++i;
+
+		separator = ", ";
+		i++;
 	}
+
+	va_end(args);
 	printf("\n");
-	va_end(form);
 }
