@@ -1,41 +1,48 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+void print_opcodes(int num_bytes);
+
 /**
- * main - prints its own opcodes
- * @argc: number of arguments
- * @argv: array of arguments
+ * print_opcodes - Print the opcodes of the main function
+ * @num_bytes: The number of bytes to print
+ */
+void print_opcodes(int num_bytes)
+{
+	unsigned char *main_opcodes = (unsigned char *)print_opcodes;
+
+	int i;
+
+	for (i = 0; i < num_bytes; i++)
+	{
+		printf("%02x ", main_opcodes[i]);
+	}
+	printf("\n");
+}
+
+/**
+ * main - Entry point of the program
+ * @argc: The number of arguments passed to the program
+ * @argv: An array of strings containing the arguments
  *
- * Return: Always 0 (Success)
+ * Return:0 on success, 1 if incorrect number of arguments, 2 if the number of bytes is negative or zero
  */
 int main(int argc, char *argv[])
 {
-	int bytes, i;
-	char *arr;
-
 	if (argc != 2)
 	{
 		printf("Error\n");
-		exit(1);
+		return (1);
 	}
 
-	bytes = atoi(argv[1]);
+	int num_bytes = atoi(argv[1]);
 
-	if (bytes < 0)
+	if (num_bytes <= 0)
 	{
 		printf("Error\n");
 		return (2);
 	}
-	arr = (char *)main;
 
-	for (i = 0; i < bytes; i++)
-	{
-		if (i == bytes - 1)
-		{
-			printf("%02hhx\n", arr[i]);
-			break;
-		}
-		printf("%02hhx ", arr[i]);
-	}
+	print_opcodes(num_bytes);
 	return (0);
 }
