@@ -20,7 +20,6 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	pristineNode->n = n;
 	pristineNode->next = *head;
 	*head = pristineNode;
-	free(pristineNode);
 
 	return (pristineNode);
 }
