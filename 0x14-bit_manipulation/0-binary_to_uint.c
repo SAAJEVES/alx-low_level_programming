@@ -14,7 +14,6 @@ unsigned int custom_pow(unsigned int base, unsigned int exponent) {
 		result *= base;
 		exponent--;
 	}
-
 	return result;
 }
 
