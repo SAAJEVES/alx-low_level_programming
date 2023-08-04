@@ -3,18 +3,22 @@
 
 /**
  * custom_pow - work in place of pow
- * base: 2
- * exponent: any value greater 0
+ * @base: the base
+ * @exponent: any value greater 0
  * Return: a value
  */
-unsigned int custom_pow(unsigned int base, unsigned int exponent) {
-	unsigned int result = 1;
+unsigned int custom_pow(unsigned int base, unsigned int exponent)
+{
+	unsigned int result;
 
-	while (exponent > 0) {
+	result = 1;
+
+	while (exponent > 0)
+	{
 		result *= base;
 		exponent--;
 	}
-	return result;
+	return (result);
 }
 
 
