@@ -7,24 +7,31 @@
  */
 void print_binary(unsigned long int n)
 {
-	unsigned long int check, val;
-	int i;
+	unsigned long int check, val, one, i;
+	int notTo;
 
-	val = 1;
-	i = sizeof(unsigned long int) * 8;
-	i--;
+	i = 0;
+	notTo = 0;
+	one = 1;
+	val = sizeof(unsigned long int) * (8);
+	check = one << (val - 1);
 
-	for (; i >= 0; i--)
+	for (; i < val; i++)
 	{
-		check = val << i;
-
 		if ((n & check) >= 1)
 		{
 			_putchar('1');
+			notTo = 1;
 		}
-		else
+		else if (notTo)
 		{
 			_putchar('0');
 		}
+		check >>= 1;
+	}
+
+	if (!notTo)
+	{
+		_putchar('0');
 	}
 }
