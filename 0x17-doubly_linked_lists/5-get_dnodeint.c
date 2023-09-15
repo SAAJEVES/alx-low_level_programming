@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * get_node_dnodeint_at_index - to get the value at a node
+ * get_dnodeint_at_index - to get the value at a node
  *
  * @head: the doubly linked list
  *
@@ -20,13 +20,14 @@ dlistint_t *get_dnodeint_at_index(dlistint_t *head, unsigned int index)
 
 	if (head == NULL)
 		return (NULL);
+
 	temp = head;
-	 while (temp != NULL)
-	 {
-		 if (n == index)
-			 return (temp);
-		 temp = temp->next;
-		 n++;
-	 }
-	 return (NULL);
+	while (temp != NULL)
+	{
+		if (n == index)
+			return (temp);
+		temp = temp->next;
+		n++;
+	}
+	return (NULL);
 }
