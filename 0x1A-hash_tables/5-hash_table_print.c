@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * has_used_index - implementing used index
+ * hash_used_index - implementing used index
  *
  * @ht: hash table
  *
