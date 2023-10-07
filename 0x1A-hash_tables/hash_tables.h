@@ -1,5 +1,5 @@
-#ifndef HASH
-#define HASH
+#ifndef HASH_H
+#define HASH_H
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -37,4 +37,4 @@ typedef struct hash_table_s
 hash_table_t *hash_table_create(unsigned long int size);
 
 
-#endif
+#endif /* HASH_H */
