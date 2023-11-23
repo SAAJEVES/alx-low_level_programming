@@ -1,0 +1,4 @@
+# First Makefile
+
+all:
+	gcc -Wall -pedantic -Werror -Wextra -std=gnu89 m.h main.c school.c -o school
