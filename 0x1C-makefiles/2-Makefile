@@ -1,3 +1,11 @@
 # Third Makefile
 
+CC = gcc -Wall -pedantic -Werror -Wextra -std=gnu89
+SRC = main.c school.c
+OBJ = $(SRC:.c=.o)
+NAME = school
 
+all:
+	$(CC) -c $(SRC)
+	$(CC) -o $(NAME) $(OBJ)
+	rm *.o
