@@ -50,11 +50,11 @@ int binary_search_index(int *array, size_t l, size_t r, int value)
 /**
  * binary_search - carry out BS
  *
- * array: array to search
+ * @array: array to search
  *
- * size: size of the array
+ * @size: size of the array
  *
- * value: value to search for
+ * @value: value to search for
  *
  * Return: index or -1 if null
  */
